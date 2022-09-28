@@ -15,10 +15,11 @@ def print_stats(size, status_codes):
     Args:
         size (int): The accumulated read file size.
         status_codes (dict): The accumulated count of status codes.
-    """
+        """
     print("File size: {}".format(size))
     for key in sorted(status_codes):
         print("{}: {}".format(key, status_codes[key]))
+
 
 if __name__ == "__main__":
     import sys
