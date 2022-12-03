@@ -6,13 +6,13 @@ from sys import argv
 
 ''' a script that lists all states from the database'''
 if __name__ == "__main__":
-    con = MySQLdb.connect(
-            host="localhost", port=3306, user=argv[1],
-            passwd=argv[2], database=argv[3])
-    cursor = con.cursor()
+    db = MySQLdb.connect(
+            host="localhost", port=3306, user=sys.argv[1],
+            passwd=sys.argv[2], db=sys.argv[3])
+    cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDERED BY id ASC")
-    db = cursor.fetchall()
-    for i in db:
+    d_b = cursor.fetchall()
+    for i in d_b:
         print(i)
     cursor.close()
-    db.close()
+    d_b.close()
