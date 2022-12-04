@@ -16,6 +16,6 @@ if __name__ == "__main__":
         print("{:}: ".format(session.query(State).order_by(
             State.id).first().id), end="")
         print(session.query(State).order_by(State.id).first().name)
-    except:
+    except Exception as e:
         print("Nothing")
     session.close()
