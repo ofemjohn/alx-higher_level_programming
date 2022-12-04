@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 
 import MySQLdb
 import sys
@@ -16,8 +16,8 @@ if __name__ == "__main__":
         database=sys.argv[3],
         charset="utf8")
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINRY
-                '{}' ORDERED BY ASC".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINRY'{}' ORDERED BY id ASC"
+            .format(sys.argv[4]))
     fetch = cur.fetchall()
     for i in fetch:
         print(i)
